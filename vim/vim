@@ -1,0 +1,31 @@
+Ctrl-f    即 PageDown 翻页。
+Crtl-b    即 PageUp 翻页。
+
+第一种方式
+
+:$ 跳转到最后一行
+:1 跳转到第一行
+第二种方式
+
+shift+g 跳转到最后一行
+gg 跳转到第一行
+
+
+:w 保存文件但不退出vi
+:w file 将修改另外保存到file中，不退出vi
+:w! 强制保存，不推出vi
+:wq 保存文件并退出vi
+:wq! 强制保存文件，并退出vi
+:q 不保存文件，退出vi
+:q! 不保存文件，强制退出vi
+:e! 放弃所有修改，从上次保存文件开始再编辑命令历史
+
+
+/super  或者  ？super，  两者的区别是前者是从上往下搜索，后者是从下往上搜索。
+
+Shift + *  ，即可快速选中该单词，并且可以通过 n  或  N 进行上一个或下一个的匹配
+
+
+https://harttle.land/2016/08/08/vim-search-in-file.html
+https://harttle.land/tags.html#Github
+在 Vim 中优雅地查找和替换

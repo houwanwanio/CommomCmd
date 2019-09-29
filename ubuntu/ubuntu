@@ -1,0 +1,6 @@
+sed -i 's/北京极点迅速科技有限公司/宜昌泽恒商贸有限公司/g' `grep 北京极点迅速科技有限公司 -rl ./jidianxunsu`
+
+sed -i 's/www.miitbeian.gov.cn/www.beian.miit.gov.cn/g' `grep www.miitbeian.gov.cn -rl ./jidianxunsu`
+
+find命令查询某一个目录
+find / -name MNIST_LOG -type d 2>/dev/null
