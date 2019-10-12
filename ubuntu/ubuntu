@@ -4,3 +4,47 @@ sed -i 's/www.miitbeian.gov.cn/www.beian.miit.gov.cn/g' `grep www.miitbeian.gov.
 
 find命令查询某一个目录
 find / -name MNIST_LOG -type d 2>/dev/null
+
+1、远程复制
+scp id_rsa.pub root@39.106.22.221:/root/.ssh
+
+服务器添加rsa公钥
+cat id_rsa.pub >> authorized_keys
+
+
+2、Linux find命令用来在指定目录下查找文件。
+find <path> -type d -name "dir_name"
+-type d是查找目录的参数，如果是查找其他的：
+
+-type b: Block special device file
+-type c: Character special device file
+-type f: Regular file
+-type l: Symbol link
+
+ find / -type d -name "blog"
+
+3、Linux系统中grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。
+grep [option] pattern file
+grep 'linux' test.txt
+
+
+4、watch -n 10 nvidia-smi
+
+
+5、行跳转
+在编辑模式下输入
+ngg 或者 nG
+n为指定的行数(如25)
+25gg或者25G 跳转到第25行.
+
+在命令模式下输入行号n
+: n
+
+如果想打开文件即跳转
+vim +n FileName
+
+查看当然光标所在的行
+Ctrl+g
+
+
+

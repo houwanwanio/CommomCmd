@@ -1,3 +1,35 @@
-查看CUDA版本的命令：
+1、查看CUDA版本的命令：
 
 cat /usr/local/cuda/version.txt
+
+2、检查服务器是否支持GPU
+import tensorflow as tf
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+
+
+from tensorflow.python.client import device_lib
+ 
+def get_available_gpus():
+    local_device_protos = device_lib.list_local_devices()
+    return [x.name for x in local_device_protos if x.device_type == 'GPU']
+print(get_available_gpus())
+
+
+import tensorflow as tf
+
+gpu_device_name = tf.test.gpu_device_name()
+print(gpu_device_name)
+
+
+
+# 返回True或者False
+tf.test.is_gpu_available()
+
+3、tensorboard启动
+tensorboard --logdir .
+
+tensorboard --logdir=name1:/home/vision_rd/houwanwan/nsfw-classification-tensorflow-master/model/nsfw_cls/,name2:.
+tensorboard --logdir=name1:.,name2:/home/vision_rd/houwanwan/nsfw-classification-tensorflow-master/model/nsfw_cls/
+4、使用Keras学习深度学习
+
+https://p.migdal.pl/2017/04/30/teaching-deep-learning.html

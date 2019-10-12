@@ -1,0 +1,20 @@
+https://github.com/MaybeShewill-CV/nsfw-classification-tensorflow
+
+python3 tools/test_nsfw.py --weights_path model/new_model/nsfw_cls.ckpt-100000 --image_path ./data/test_data/drawing_16715.jpg
+
+python3 ./data_provider/nsfw_data_feed_pipline.py \
+   --dataset_dir /data01/data/nsfw/nsfw_dataset \
+   --tfrecords_dir /data01/data/nsfw/nsfw_dataset/tfrecords
+
+python3 tools/train_nsfw.py --dataset_dir /data01/data/nsfw/nsfw_dataset --use_multi_gpu True
+
+
+from funcsigs import signature
+
+python3 tools/evaluate_nsfw.py --weights_path model/nsfw_cls/nsfw_cls_2019-10-11-16-03-12.ckpt-160000 --dataset_dir /data01/data/nsfw/nsfw_dataset
+
+
+python3 tools/export_saved_model.py --ckpt_path model/nsfw_cls/nsfw_cls_2019-10-11-16-03-12.ckpt-160000 \
+--export_dir ./model/nsfw_export_saved_model
+
+

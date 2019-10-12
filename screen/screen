@@ -9,3 +9,59 @@ $
 首先，进入拷贝模式：
 
 Ctrl + a + [
+退出拷贝模式
+Esc 结束 copy mode 
+
+关闭窗口的方法是使用C-a k
+
+快捷键C-a w列出当前所有窗口。
+用快捷键C-a A来为当前窗口重命名
+
+1.在当前screen窗口中键入C-a c，即Ctrl键+a键，之后再按下c键，screen 在该会话内生成一个新的窗口并切换到该窗口
+
+2. C-a n，即Ctrl键+a键,之后再按下n键, 切换到下一个窗口； C-a p，即Ctrl键+a键,之后再按下p键, 切换到前一个窗口
+
+3. ctrl a + k 关闭当前窗口
+
+screen -d -r yourname -> 结束当前session并回到yourname这个session
+
+screen -D -r yourname-> 结束当前的session,并logout,再链接yourname这个session
+
+2. 上下分屏：ctrl + a 再按shift + s;垂直分屏，快捷键是C-a |
+可以用C-a X快捷键关闭当前焦点所在的屏幕区块，也可以用C-a Q关闭除当前区块之外其他的所有区块。关闭的区块中的窗口并不会关闭，还可以通过窗口切换找到它。
+
+3，切换屏幕：ctrl + a 再按tab键
+
+C-a t -> Time，显示当前时间，和系统的 load 
+
+4，新建一个终端：ctrl + a 再按c
+
+5，关闭一个终端：ctrl + a 再按x （或直接按exit退出）
+C-a n -> Next，切换到下一个 window 
+C-a p -> Previous，切换到前一个 window 
+C-a 0..9 -> 切换到第 0..9 个 window
+Ctrl+a [Space] -> 由视窗0循序切换到视窗9
+C-a C-a -> 在两个最近使用的 window 间切换 
+C-a d -> detach，暂时离开当前session，将目前的 screen session (可能含有多个 windows) 丢到后台执行，并会回到还没进 screen 时的状态，此时在 screen session 里，每个 window 内运行的 process (无论是前台/后台)都在继续执行，即使 logout 也不影响。 
+
+Screen允许使用快捷键C-a s锁定会话。锁定以后，再进行任何输入屏幕都不会再有反应了。但是要注意虽然屏幕上看不到反应，但你的输入都会被Screen中的进程接收到。快捷键C-a q可以解锁一个会话。
+
+也可以使用C-a x锁定会话，不同的是这样锁定之后，会话会被Screen所属用户的密码保护，需要输入密码才能继续访问这个会话。
+
+如果由于某种原因其中一个会话死掉了（例如人为杀掉该会话），这时screen -list会显示该会话为dead状态。使用screen -wipe命令清除该会话：
+
+Screen允许使用快捷键C-a s锁定会话。锁定以后，再进行任何输入屏幕都不会再有反应了。但是要注意虽然屏幕上看不到反应，但你的输入都会被Screen中的进程接收到。快捷键C-a q可以解锁一个会话。
+
+
+2.3 复制与粘贴模式
+screen有两种特殊模式，复制与粘贴。进入粘贴模式后，光标的可以回滚，移动操作同vim(这真的是太便利了).如果想选定文本，只需要按space,然后移动，结束后按space.进入粘贴模式后，选择的文本就会自动按贴过来。
+
+快捷键	含义
+C-a [	键入复制模式
+H	光标移动到左上角
+L	光标移动到左下角
+第一次space	复制开始
+第二次space	复制结束
+C-a ]	进入粘贴模式
+
+http://fishcried.com/2014-08-22/screen/
