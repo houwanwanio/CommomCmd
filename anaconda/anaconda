@@ -1,0 +1,5 @@
+anaconda linux开机不进入虚拟环境
+新版的anaconda（python3.7）安装后自动进入虚拟环境base，执行命令：
+
+
+conda config --set auto_activate_base false

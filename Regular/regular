@@ -1,0 +1,2 @@
+1、怎么匹配不想关的内容
+grep -iv "xclick" train-annotations-bbox_v5.csv |grep -iv "activemil"

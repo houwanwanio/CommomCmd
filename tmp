@@ -1,0 +1,7 @@
+Platform	Model		Acc@1	Acc@5	Rank@1	Rank@5
+PyTorch 1.0	resnet50	75.06	92.48	10	10
+Keras 2.2.4	resnet50	70.35	89.55	21	22
+Keras 2.2.4	mobilenetV2	69.98	89.49	23	23
+Keras 2.2.4	mobilenet	69.02	88.48	26	27
+
+

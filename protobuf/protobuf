@@ -1,0 +1,9 @@
+编译方式
+1. 编译---迫不及待的萌新编译：
+
+g++ *.cpp lm.helloworld.pb.cc -o tst
+结果就是一堆ld错误，你得告诉编译器使用lprotobuf啊，原来要这样：
+
+g++ *.cpp lm.helloworld.pb.cc -lprotobuf -o tst
+
+

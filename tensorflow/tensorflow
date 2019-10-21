@@ -33,3 +33,8 @@ tensorboard --logdir=name1:.,name2:/home/vision_rd/houwanwan/nsfw-classification
 4、使用Keras学习深度学习
 
 https://p.migdal.pl/2017/04/30/teaching-deep-learning.html
+
+5、英伟大释放内存
+
+fuser -v /dev/nvidia* #查找占用GPU资源的PID
+kill -9 pid
