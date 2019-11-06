@@ -38,3 +38,7 @@ https://p.migdal.pl/2017/04/30/teaching-deep-learning.html
 
 fuser -v /dev/nvidia* #查找占用GPU资源的PID
 kill -9 pid
+
+6、TFrecord
+https://www.armcvai.com/%E3%80%90tensorflow%E3%80%91tfrecord%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/
+https://zhuanlan.zhihu.com/p/30751039

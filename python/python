@@ -31,3 +31,18 @@ sys.path.append('./models/research/')
 export PYTHONPATH=/home/vision_rd/houwanwan/mask-detection/models-master/research/slim/:$PYTHONPATH
 
 export PYTHONPATH=./datasets-master/:$PYTHONPATH
+
+4、新建文件
+f = open("test.txt",w) 
+fp.write(str) 
+f.close()
+
+5、执行系统命令
+os模块
+os.system(cmd)
+在子终端运行系统命令，不能获取命令执行后的返回信息以及执行返回的状态
+
+import os
+os.system('date')
+# 2016年 06月 30日 星期四 19:26:21 CST
+

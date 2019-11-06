@@ -1,4 +1,6 @@
 https://harttle.land/2015/11/07/vim-cursor.html
+set autoindent
+查看文件名. 在正常模式下： :f 或CTRL+G. 
 Ctrl-f    即 PageDown 翻页。
 Crtl-b    即 PageUp 翻页。
 取消上一步操作是 ctrl+r
@@ -281,3 +283,6 @@ vim -R file
 
 即使这样，你的修改还是会被接纳的。有可能你只是想排列这些文本，以便阅读。 如果你确实要改动这个文件，在 write 命令前面加上 ! 可以强制写入。 如果你的确想禁止文件修改，用这个命令： 
 vim -M file
+
+
+按ggdG清空文档内容

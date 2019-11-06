@@ -2,6 +2,15 @@ sed -i 's/北京极点迅速科技有限公司/宜昌泽恒商贸有限公司/g'
 
 sed -i 's/www.miitbeian.gov.cn/www.beian.miit.gov.cn/g' `grep www.miitbeian.gov.cn -rl ./jidianxunsu`
 
+Linux下有三个命令：ls、grep、wc。通过这三个命令的组合可以统计目录下文件及文件夹的个数。
+
+统计当前目录下文件的个数（不包括目录）
+$ ls -l | grep "^-" | wc -l
+统计当前目录下文件的个数（包括子目录）
+ls -lR| grep "^-" | wc -l
+查看某目录下文件夹(目录)的个数（包括子目录）
+ls -lR | grep "^d" | wc -l
+
 find命令查询某一个目录
 find / -name MNIST_LOG -type d 2>/dev/null
 
@@ -181,4 +190,46 @@ Q2、 如何确保 tee 命令追加信息到文件中？
 [command] | tee -a [file]
 基本上，-a 选项强制 tee 命令追加信息到文件。
 
+23 撤销命令
+在vi中按u可以撤销一次操作
+
+u   撤销上一步的操作
+Ctrl+r 恢复上一步被撤销的操作
+
+注意：
+如果你输入“u”两次，你的文本恢复原样，那应该是你的Vim被配置在Vi兼容模式了。
+重做
+如果你撤销得太多，你可以输入CTRL-R（redo）回退前一个命令。换句话说，它撤销一个撤销。
+
+24 1.生成标签文件
+        在当前目录下(运行$提示符后面的命令): 
+        ctags -R .
+
+
+25、find ./ -type f|head -n 1|xargs -I {} vim {}
+
+26、zip压缩文件
+压缩当前的文件夹 zip -r ./xahot.zip ./* -r表示递归
+zip [参数] [打包后的文件名] [打包的目录路径]
+
+27、top根据cpu和mem排序
+一、按进程的CPU使用率排序
+
+运行top命令后，键入大写P。
+
+有两种途径：
+
+a) 打开大写键盘的情况下，直接按P键
+
+b) 未打开大写键盘的情况下，Shift+P键
+
+二、按进程的内存使用率排序
+
+运行top命令后，键入大写M。
+
+有两种途径：
+
+a) 打开大写键盘的情况下，直接按M键
+
+b) 未打开大写键盘的情况下，Shift+M键
 
