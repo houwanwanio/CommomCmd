@@ -17,3 +17,77 @@ sudo gitlab-ctl stop
 # Restart all GitLab components
 sudo gitlab-ctl restart
 
+https://git-scm.com/book/zh/v1/Git-基础-远程仓库的使用
+1、查看当前的远程库
+要查看当前配置有哪些远程仓库，可以用 git remote 命令，它会列出每个远程库的简短名字。在克隆完某个项目后，至少可以看到一个名为 origin 的远程库，Git 默认使用这个名字来标识你所克隆的原始仓库：也可以加上 -v 选项（译注：此为 --verbose 的简写，取首字母），显示对应的克隆地址：
+
+添加远程仓库
+要添加一个新的远程仓库，可以指定一个简单的名字，以便将来引用，运行 git remote add [shortname] [url]：
+
+$ git remote
+origin
+$ git remote add pb git://github.com/paulboone/ticgit.git
+$ git remote -v
+origin  git://github.com/schacon/ticgit.git
+pb  git://github.com/paulboone/ticgit.git
+
+现在可以用字符串 pb 指代对应的仓库地址了。比如说，要抓取所有 Paul 有的，但本地仓库没有的信息，可以运行 git fetch pb：
+
+$ git fetch pb
+remote: Counting objects: 58, done.
+remote: Compressing objects: 100% (41/41), done.
+remote: Total 44 (delta 24), reused 1 (delta 0)
+Unpacking objects: 100% (44/44), done.
+From git://github.com/paulboone/ticgit
+ * [new branch]      master     -> pb/master
+ * [new branch]      ticgit     -> pb/ticgit
+
+推送数据到远程仓库
+项目进行到一个阶段，要同别人分享目前的成果，可以将本地仓库中的数据推送到远程仓库。实现这个任务的命令很简单： git push [remote-name] [branch-name]。如果要把本地的 master 分支推送到 origin 服务器上（再次说明下，克隆操作会自动使用默认的 master 和 origin 名字），可以运行下面的命令：
+
+$ git push origin master
+只有在所克隆的服务器上有写权限，或者同一时刻没有其他人在推数据，这条命令才会如期完成任务。如果在你推数据前，已经有其他人推送了若干更新，那你的推送操作就会被驳回。你必须先把他们的更新抓取到本地，合并到自己的项目中，然后才可以再次推送。有关推送数据到远程仓库的详细内容见第三章
+查看远程仓库信息
+我们可以通过命令 git remote show [remote-name] 查看某个远程仓库的详细信息，比如要看所克隆的 origin 仓库，可以运行：
+
+$ git remote show origin
+* remote origin
+  URL: git://github.com/schacon/ticgit.git
+  Remote branch merged with 'git pull' while on branch master
+    master
+  Tracked remote branches
+    master
+    ticgit
+除了对应的克隆地址外，它还给出了许多额外的信息。它友善地告诉你如果是在 master 分支，就可以用 git pull 命令抓取数据合并到本地。另外还列出了所有处于跟踪状态中的远端分支。
+git push -f learn master
+
+解决方案：
+
+因为当前分支的最新提交落后于其对应的远程分支，所以我们先从远程库fetch到更新再和本地库合并，之后就可以git push操作了。
+
+git remote add origin https://github.com/username/test.git  
+$git fetch origin
+$git merge origin/master
+
+彻底删除gitlab
+https://www.rambolu.top/2018/06/03/Linux-Ubuntu%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BDGitlab/
+二、卸载Gitlab
+停止gitlab
+sudo gitlab-ctl stop
+查看进程
+ps -e | grep gitlab
+删除所有包含gitlab的文件及目录
+find / -name gitlab | xargs rm -rf
+卸载
+sudo apt-get remove gitlab-ce
+或者
+sudo apt-get remove gitlab-ee
+检查还有没有卸载的gitlab相关软件
+dpkg --get-selections | grep gitlab
+$ dpkg –get-selections|grep gitlab
+gitlab-ee deinstall
+
+再执行
+
+sudo apt-get --purge remove gitlab-ee
+

@@ -1,0 +1,31 @@
+
+./configure --with-http_ssl_module --add-module=../nginx-rtmp-module
+
+https://www.sample-videos.com/index.php#sample-mp4-video
+https://blog.csdn.net/kingroc/article/details/50839994
+https://blog.csdn.net/kingroc/article/details/50829213
+ffplay http://localhost/live/test/index.m3u8
+ffplay rtmp://localhost/live/test
+https://support.mozilla.org/zh-CN/kb/%E5%AE%89%E8%A3%85%20Flash%20%E6%8F%92%E4%BB%B6
+
+https://juejin.im/post/5d8b57dc6fb9a04e024073c4
+
+ffmpeg -i "rtsp://admin:asdf1234@172.17.247.205:1554/h264/ch1/main/av_stream" -f flv -r 25 -s 1080*720 -an "rtmp://localhost/live/test"
+
+ffmpeg -i "rtsp://admin:asdf1234@172.17.247.205:1554/h264/ch1/main/av_stream" -c copy -f hls -hls_time 2.0 -hls_list_size 0 -hls_wrap 15 "/opt/video/hls/index.m3u8"
+
+<iframe src="http://172.17.128.248:8080/video/rtmp.html" height="500" width="1200" frameborder="0" scrolling="0"></iframe>
+
+http://127.0.0.1/stat.html
+https://github.com/grafana/grafana/issues/15647
+
+
+http://172.17.247.205:3000/dashboard-solo/db/devil?orgId=1&panelId=1
+https://github.com/grafana/grafana/issues/17458
+
+sudo service grafana-server restart
+
+
+5.3.4
+
+

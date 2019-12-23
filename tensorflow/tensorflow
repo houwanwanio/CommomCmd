@@ -42,3 +42,13 @@ kill -9 pid
 6、TFrecord
 https://www.armcvai.com/%E3%80%90tensorflow%E3%80%91tfrecord%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/
 https://zhuanlan.zhihu.com/p/30751039
+
+7、清空计算图
+tf.reset_default_graph()
+sess.run(tf.global_variables_initializer())
+
+8、评价指标
+http://ronny.rest/blog/post_2017_09_11_tf_metrics/
+https://www.cnblogs.com/wuliytTaotao/p/9285227.html
+https://blog.csdn.net/qq_37747262/article/details/82223155
+

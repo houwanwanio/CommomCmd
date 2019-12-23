@@ -1,6 +1,6 @@
 1、glob方法：
 glob模块的主要方法就是glob,该方法返回所有匹配的文件路径列表（list）；该方法需要一个参数用来指定匹配的路径字符串（字符串可以为绝对路径也可以为相对路径），其返回的文件名只包括当前目录里的文件名，不包括子文件夹里的文件。
-
+import glob
 比如：
 glob.glob(r’c:*.txt’)
 我这里就是获得C盘下的所有txt文件
@@ -46,3 +46,57 @@ import os
 os.system('date')
 # 2016年 06月 30日 星期四 19:26:21 CST
 
+6、计时功能
+import time
+
+start = time.time()
+# code to run
+end = time.time()
+cost = end - start #time in second
+
+
+1、目标检测
+a、查看openimage标注论文，论文中只是说明了两种标注方案，分别是Extreme clicking和human verification，没有说明具体标注细节。在openimage描述中说明这些标注框已经被人工验证Iou>0.7相比图片最佳的标注位置。如果一张图片中5次实例遮挡或者物理接触严重，只标注一个大框。训练集合中human body parts 和 "Mammal"类只有95,335张图片，因为它们的标注框实在太多。
+b、在openimage Download部分有标注框的详细说明，编写程序为每一次框都打上相关信息，图片是否遮挡、截断、分组、绘画、内部拍摄，利用这些信息还可以对数据进一步筛选
+
+2、nsfw
+a、使用几个模型进行比较，resnet50 finetune所有层，准确率最高时达到91.65%;inception_v3 finutune所有层准确率最高达到92.76%,
+b、生成pb文件，编写inference代码，测试单张图片推断时间，mobilenet_v2_140是0.2152s,resnet_v2_50是0.4932s
+c、在slim eval代码基础上修改，编写评估代码，生成混淆矩阵，在restnet结果中错误分类图片中1/4是将sexy类误识别为porn
+
+
+7、路径选择
+import os
+for root, dirs, files in os.walk(".", topdown=False):
+   for name in files:
+      print(os.path.join(root, name))
+   for name in dirs:
+      print(os.path.join(root, name))
+
+8、异常
+try:
+  print(x)
+except:
+  print("An exception occurred")
+
+9、判断文件是否存在
+import os
+os.path.exists(test_file.txt)
+#True
+
+os.path.exists(no_exist_file.txt)
+10、路径合成
+import os 
+  
+# Path 
+path = "/home"
+  
+# Join various path components  
+print(os.path.join(path, "User/Desktop", "file.txt")) 
+  
+  
+# Path 
+path = "User/Documents"
+  
+# Join various path components  
+print(os.path.join(path, "/home", "file.txt")) 
