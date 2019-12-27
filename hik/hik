@@ -1,0 +1,69 @@
+asdf1234
+rtsp://admin:asdf1234@192.168.1.64:554/h264/ch1/main/av_stream
+rtsp://admin:asdf1234@192.168.31.64:554/h264/ch1/main/av_stream
+
+rtsp://admin:asdf1234@172.17.247.205:1554/h264/ch1/main/av_stream
+
+export PYTHONPATH=$PYTHONPATH:/data01/data/houwanwan/gen-efficientnet-pytorch
+
+172.17.247.205
+
+111111
+
+houwanwan@roobo.com
+
+INSERT cpu,host=127.0.0.1 load=0.2,usage=0.9
+INSERT cpu,host=127.0.0.1 load=0.3,usage=0.9
+INSERT cpu,host=127.0.0.1 load=0.4,usage=0.9
+INSERT cpu,host=127.0.0.1 load=0.5,usage=0.9
+INSERT cpu,host=127.0.0.1 load=0.6,usage=0.9
+INSERT cpu,host=127.0.0.1 load=0.7,usage=0.9
+INSERT cpu,host=127.0.0.1 load=0.8,usage=0.9
+INSERT cpu,host=127.0.0.1 load=0.9,usage=0.9
+INSERT cpu,host=127.0.0.1 load=1.0,usage=0.9
+
+yarn 1.19.1
+
+
+export ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/"
+
+
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+cnpm install -g electron
+
+https://segmentfault.com/a/1190000012764408
+
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt-get update && sudo apt-get install yarn
+
+Linux：/etc/influxdb/influxdb.conf
+重启
+
+/etc/init.d/influxdb restart
+sudo apt-get update
+sudo apt install curl
+
+sudo service grafana-server start
+
+
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+
+
+ffmpeg -i "rtsp://admin:asdf1234@172.17.247.205:1554/h264/ch1/main/av_stream" -vcodec copy -acodec copy -f flv "rtmp://127.0.0.1:8090/feed1.ffm"
+
+ffserver -f /etc/ffserver.conf
+
+sudo vim /etc/ffserver.conf
+ffmpeg -i rtsp://admin:asdf1234@172.17.247.205:1554/h264/ch1/main/av_stream http://localhost:8090/feed1.ffm
+
+http://localhost:8090/stat.html
+
+ffmpeg -r 25 -s 352x288 -f video4linux2 -i /dev/video0 http://localhost:8090/feed1.ffm
+
+
+https://www.cnblogs.com/zhumengke/articles/11206794.html
+火狐安装flash
+https://support.mozilla.org/zh-CN/kb/%E5%AE%89%E8%A3%85%20Flash%20%E6%8F%92%E4%BB%B6
