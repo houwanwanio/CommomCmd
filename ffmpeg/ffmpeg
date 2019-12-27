@@ -1,0 +1,1 @@
+ffmpeg -i rtsp://admin:asdf1234@172.17.247.205:1554/h264/ch10/sub/av_stream -vcodec copy -acodec aac -ar 44100 -strict -2 -ac 1 -f flv -s 640x480 -q 10 -f flv rtmp://127.0.0.1:1935/live
